@@ -25,8 +25,16 @@ $('#select').submit(function() {
     //new Date(milliseconds)
     //getTime() 屬於 milliseconds
     for(var i=0;i<topicCount;i++){
-        $("#coursetable").append(
+        if(i==1){
+            $("#coursetable").append(
+                `<tr style="color:gray"><td>${i+1}</td><td>${(new Date(date.getTime()+7*i*milliseconds)).toLocaleDateString().slice(5)}</td><td>${topic[i]}</td></tr>`
+                );
+        }
+        else{
+            $("#coursetable").append(
             `<tr><td>${i+1}</td><td>${(new Date(date.getTime()+7*i*milliseconds)).toLocaleDateString().slice(5)}</td><td>${topic[i]}</td></tr>`
-        );
+            );
+        }
+        
     }
 })
