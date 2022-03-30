@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+    background-image: url(overlay.png),url(bg.jpg);
+    background-repeat: repeat, no-repeat;
+	background-size: auto, 100% 100%;
+	background-attachment: fixed;
+	overflow-y: scroll;
+}
+
+h2{
+    height: 32px;
+    font-size: medium;
+}
