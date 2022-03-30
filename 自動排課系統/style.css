@@ -1,5 +1,10 @@
 body{
     text-align: center;
+    background-image: url(overlay.png),url(bg.jpg);
+    background-repeat: repeat, no-repeat;
+	background-size: auto, 100% 100%;
+	background-attachment: fixed;
+	overflow-y: scroll;
 }
 
 table{
@@ -10,4 +15,12 @@ table{
 
 td{
     border-bottom: 1px solid blue;
+}
+
+input {
+    padding:5px 15px; background:#ccc; border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    font-size:12px;
 }

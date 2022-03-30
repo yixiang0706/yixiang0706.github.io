@@ -14,6 +14,4 @@ function setnewdate(month,day){
     date.setMinutes(0);
     date.setSeconds(0);
 };
-
-setnewdate(2,9);
 //debugger;
