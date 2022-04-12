@@ -18,3 +18,7 @@ canvas{
     font-size: 26px;
     font-weight: bold;
 }
+
+#boder{
+    border-style:dashed;
+}
