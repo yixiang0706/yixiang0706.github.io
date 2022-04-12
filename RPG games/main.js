@@ -115,7 +115,12 @@ $(document).on("keydown",function(event){
                 $("#talkBox").text("有山");
                 break;
             case 2: 
-                $("#talkBox").text("抵達終點");
+                $("#talkBox").text("抵達終點 聽歌休息一下吧!!");
+                document.querySelector('.YT').innerHTML = `<iframe width="700" height="470"
+                src="https://www.youtube.com/embed/SwZMS-ISbH4?autoplay=1">
+                </iframe><br><a href="./index.html">
+                <center><button class="shape-ex1">Again.</button></center></a>`;
+                YT.show();
                 currentImgMain.x = targetImg.x;
                 currentImgMain.y = targetImg.y;
                 break;
