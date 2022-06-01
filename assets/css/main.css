@@ -80,3 +80,34 @@ img.pull-left { margin-right: 10px; }
 
 	.widget-simplenav { margin-left:-5px; }		
 	.widget-simplenav a{ margin:0 5px; }		
+
+	table
+	{
+		width:100%;
+		border-collapse: collapse;
+		margin: 0 auto;
+		text-align: center;
+	}
+	table td,table th
+	{
+		text-align: center;
+		border: 1px solid #cad9ea;
+		color: #666;
+		height: 30px;
+	}
+	table thead th
+	{
+		text-align: center;
+		background-color: #CCE8EB;
+		width: 100px;
+	}
+	table tr:nth-child(odd)
+	{
+		text-align: center;
+		background: #fff;
+	}
+	table tr:nth-child(even)
+	{
+		text-align: center;
+		background: #F5FAFA;
+	}	

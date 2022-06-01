@@ -57,9 +57,12 @@
 	<header id="head">
 		<div class="container">
 			<div class="row">
-				<h1 class="lead">AWESOME, CUSTOMIZABLE, FREE</h1>
-				<p class="tagline">PROGRESSUS: free business bootstrap template by <a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a></p>
-				<p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button">DOWNLOAD NOW</a></p>
+				<h1 class="lead">隨機縣市未來36小時天氣預報</h1>
+				<p class="thin">請按下方按鈕</p>
+				<p>↓</p>
+				<br>
+				<input type="button" class="btn btn-default btn-lg" value="隨機天氣預報">
+				<!-- <p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button">DOWNLOAD NOW</a></p> -->
 			</div>
 		</div>
 	</header>
@@ -68,11 +71,9 @@
 	<!-- Intro -->
 	<div class="container text-center">
 		<br> <br>
-		<h2 class="thin">The best place to tell people why they are here</h2>
-		<p class="text-muted">
-			The difference between involvement and commitment is like an eggs-and-ham breakfast:<br> 
-			the chicken was involved; the pig was committed.
-		</p>
+		<div id="area">
+			<table id="weathertable"></table>
+		</div>
 	</div>
 	<!-- /Intro-->
 		
@@ -246,12 +247,14 @@
 
 
 
-
+	
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="assets/js/headroom.min.js"></script>
 	<script src="assets/js/jQuery.headroom.min.js"></script>
 	<script src="assets/js/template.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="assets/js/script.js" ></script>
 </body>
 </html>
