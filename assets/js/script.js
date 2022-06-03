@@ -70,7 +70,7 @@ $(function(){
                 $("#weathertable").append(
                     `<thead>
                         <tr>
-                            <th>{{locationName}}</th>
+                            <th><h2>{{locationName}}</h2></th>
                             <th>{{startTime[0]}}</br>~</br>{{endTime[0]}}</th>
                             <th>{{startTime[1]}}</br>~</br>{{endTime[1]}}</th>
                             <th>{{startTime[2]}}</br>~</br>{{endTime[2]}}</th>
