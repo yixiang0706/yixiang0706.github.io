@@ -13,6 +13,51 @@ $(function(){
         //.then(data=>console.log(data))
         .then(
             data => {
+                let pageData = {
+                    locationName:two[randomChildnumber],
+                    weatherElement:[
+                        data.records.location[0].weatherElement[0].elementName,
+                        data.records.location[0].weatherElement[1].elementName,
+                        data.records.location[0].weatherElement[2].elementName,
+                        data.records.location[0].weatherElement[3].elementName,
+                        data.records.location[0].weatherElement[4].elementName,
+                    ],
+                    startTime:[
+                        data.records.location[0].weatherElement[0].time[0].startTime.toLocaleString().slice(5,16),
+                        data.records.location[0].weatherElement[0].time[1].startTime.toLocaleString().slice(5,16),
+                        data.records.location[0].weatherElement[0].time[2].startTime.toLocaleString().slice(5,16)
+                    ],
+                    endTime:[
+                        data.records.location[0].weatherElement[0].time[0].endTime.toLocaleString().slice(5,16),
+                        data.records.location[0].weatherElement[0].time[1].endTime.toLocaleString().slice(5,16),
+                        data.records.location[0].weatherElement[0].time[2].endTime.toLocaleString().slice(5,16)
+                    ],
+                    WxName:[
+                        data.records.location[0].weatherElement[0].time[0].parameter.parameterName,
+                        data.records.location[0].weatherElement[0].time[1].parameter.parameterName,
+                        data.records.location[0].weatherElement[0].time[2].parameter.parameterName
+                    ],
+                    MinT:[
+                        data.records.location[0].weatherElement[2].time[0].parameter.parameterName,
+                        data.records.location[0].weatherElement[2].time[1].parameter.parameterName,
+                        data.records.location[0].weatherElement[2].time[2].parameter.parameterName
+                    ],
+                    MaxT:[
+                        data.records.location[0].weatherElement[4].time[0].parameter.parameterName,
+                        data.records.location[0].weatherElement[4].time[1].parameter.parameterName,
+                        data.records.location[0].weatherElement[4].time[2].parameter.parameterName
+                    ],
+                    CI:[
+                        data.records.location[0].weatherElement[3].time[0].parameter.parameterName,
+                        data.records.location[0].weatherElement[3].time[1].parameter.parameterName,
+                        data.records.location[0].weatherElement[3].time[2].parameter.parameterName
+                    ],
+                    Pop:[
+                        data.records.location[0].weatherElement[1].time[0].parameter.parameterName,
+                        data.records.location[0].weatherElement[1].time[1].parameter.parameterName,
+                        data.records.location[0].weatherElement[1].time[2].parameter.parameterName
+                    ]
+                };
                 console.log(data);
                 if(Tablestatus){
                     $("#weathertable").remove();
@@ -25,48 +70,48 @@ $(function(){
                 $("#weathertable").append(
                     `<thead>
                         <tr>
-                            <th>${two[randomChildnumber]}</th>
-                            <th>${(data.records.location[0].weatherElement[0].time[0].startTime).toLocaleString().slice(5,16)}</br>~</br>${(data.records.location[0].weatherElement[0].time[0].endTime).toLocaleString().slice(5,16)}</th>
-                            <th>${(data.records.location[0].weatherElement[0].time[1].startTime).toLocaleString().slice(5,16)}</br>~</br>${(data.records.location[0].weatherElement[0].time[1].endTime).toLocaleString().slice(5,16)}</th>
-                            <th>${(data.records.location[0].weatherElement[0].time[2].startTime).toLocaleString().slice(5,16)}</br>~</br>${(data.records.location[0].weatherElement[0].time[2].endTime).toLocaleString().slice(5,16)}</th>
+                            <th>{{locationName}}</th>
+                            <th>{{startTime[0]}}</br>~</br>{{endTime[0]}}</th>
+                            <th>{{startTime[1]}}</br>~</br>{{endTime[1]}}</th>
+                            <th>{{startTime[2]}}</br>~</br>{{endTime[2]}}</th>
                         <tr>
                         </thead>`
                 );//第一欄
                 $("#weathertable").append(
                     `<tr>
-                        <th>氣候</br>(${data.records.location[0].weatherElement[0].elementName})</th>
-                        <th>${data.records.location[0].weatherElement[0].time[0].parameter.parameterName}</th>
-                        <th>${data.records.location[0].weatherElement[0].time[1].parameter.parameterName}</th>
-                        <th>${data.records.location[0].weatherElement[0].time[2].parameter.parameterName}</th>
+                        <th>氣候</br>({{weatherElement[0]}})</th>
+                        <th>{{WxName[0]}}</th>
+                        <th>{{WxName[1]}}</th>
+                        <th>{{WxName[2]}}</th>
                     </tr>`
                 );//第二欄
                 $("#weathertable").append(
                     `<tr>
-                        <th>最低溫度</br>(${data.records.location[0].weatherElement[2].elementName})</th>
-                        <th>${data.records.location[0].weatherElement[2].time[0].parameter.parameterName}°C</th>
-                        <th>${data.records.location[0].weatherElement[2].time[1].parameter.parameterName}°C</th>
-                        <th>${data.records.location[0].weatherElement[2].time[2].parameter.parameterName}°C</th>
+                        <th>最低溫度</br>({{weatherElement[2]}})</th>
+                        <th>{{MinT[0]}}°C</th>
+                        <th>{{MinT[1]}}°C</th>
+                        <th>{{MinT[2]}}°C</th>
                     </tr>`
                 );//第三欄
                 $("#weathertable").append(
                     `<tr>
-                        <th>最高溫度</br>(${data.records.location[0].weatherElement[4].elementName})</th>
-                        <th>${data.records.location[0].weatherElement[4].time[0].parameter.parameterName}°C</th>
-                        <th>${data.records.location[0].weatherElement[4].time[1].parameter.parameterName}°C</th>
-                        <th>${data.records.location[0].weatherElement[4].time[2].parameter.parameterName}°C</th>
+                        <th>最高溫度</br>({{weatherElement[4]}})</th>
+                        <th>{{MaxT[0]}}°C</th>
+                        <th>{{MaxT[1]}}°C</th>
+                        <th>{{MaxT[2]}}°C</th>
                     </tr>`
                 );//第四欄
                 $("#weathertable").append(
                     `<tr>
-                        <th>舒適度</br>(${data.records.location[0].weatherElement[3].elementName})</th>
-                        <th>${data.records.location[0].weatherElement[3].time[0].parameter.parameterName}</th>
-                        <th>${data.records.location[0].weatherElement[3].time[1].parameter.parameterName}</th>
-                        <th>${data.records.location[0].weatherElement[3].time[2].parameter.parameterName}</th>
+                        <th>舒適度</br>({{weatherElement[3]}})</th>
+                        <th>{{CI[0]}}</th>
+                        <th>{{CI[1]}}</th>
+                        <th>{{CI[2]}}</th>
                     </tr>`
                 );//第四欄
                 $("#weathertable").append(
                     `<tr>
-                        <th>降雨機率</br>(${data.records.location[0].weatherElement[1].elementName})</th>
+                        <th>降雨機率</br>({{weatherElement[1]}})</th>
                         <th id="th1"></th>
                         <th id="th2"></th>
                         <th id="th3"></th>
@@ -198,6 +243,15 @@ $(function(){
                 .text(`降雨機率 ${data3[0]}%`)
                 .attr('text-anchor', 'middle')
                 .attr('dy', '.6em')
+
+
+                const App = Vue.createApp({
+                    data(){
+                        return pageData;
+                    }
+                });
+                
+                App.mount("#weathertable");
             }
          )
     }));
